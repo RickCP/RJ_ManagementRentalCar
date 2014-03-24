@@ -32,6 +32,6 @@ public interface IUserService {
 	
 	public Quyen getQuyenById(int id);
 	
-	public List<User> findByQuyenId(Integer quyenId);
+	//public List<User> findByQuyenId(Integer quyenId);
 	
 }

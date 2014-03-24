@@ -19,7 +19,7 @@ public class UserController {
 	@RequestMapping(value = "/manager/listUser", method = RequestMethod.GET)
 	public ModelAndView showListUsers(Model model)
 	{   ModelAndView modelAndView = new ModelAndView("manager/listUserPage");
-		List<User> users = userService.findByQuyenId(1);
+		List<User> users = userService.findAll();
 		if(users != null)
 		{
 			model.addAttribute("users",users);

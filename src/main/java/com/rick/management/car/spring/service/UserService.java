@@ -46,9 +46,9 @@ public class UserService extends BaseService implements IUserService {
 		return userDao.getQuyenById(id);
 	}
 
-	@Override
+	/*@Override
 	public List<User> findByQuyenId(Integer quyenId) {
 		return userRepo.findByQuyenId(quyenId);
-	}
+	}*/
 
 }
