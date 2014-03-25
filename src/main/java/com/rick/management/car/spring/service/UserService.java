@@ -41,14 +41,21 @@ public class UserService extends BaseService implements IUserService {
 	}
 
 	@Override
+	@Transactional
 	public Quyen getQuyenById(int id) {
 		// TODO Auto-generated method stub
 		return userDao.getQuyenById(id);
 	}
 
 	@Override
+	@Transactional
 	public List<User> findByQuyenId(Integer quyenId) {
 		return userRepo.findByQuyenId(quyenId);
+	}
+
+	@Override
+	public User findUserByUsernameAndPassword(String userName, String password) {
+		return userRepo.findUserByUserNameAndPassword(userName, password);
 	}
 
 }

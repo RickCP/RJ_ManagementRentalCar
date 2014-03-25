@@ -10,6 +10,7 @@ public interface WebConstants {
         public static final String CLIENT_INDEX="client";
         public static final String ADMIN_PAGE="manager/admin";
         public static final String LIST_DMXE="manager/listDMXe";
+		public static final String MANAGER_MEMBER = "manager/manager_member";
 	}
 
 }

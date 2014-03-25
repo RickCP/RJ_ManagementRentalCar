@@ -16,4 +16,12 @@ public interface UserRepo extends BaseRepo<User, Integer>, UserCustomRepo {
 
 	@Query(FIND_BY_QUYEN_ID)
 	public List<User> findByQuyenId(@Param("quyenId") Integer quyenId);
+	
+	public static final String FIND_USER_BY_USERNAME_PASSWORD="SELECT u FROM User u WHERE u.userName = :userName AND u.password = :password";
+	
+	@Query(FIND_USER_BY_USERNAME_PASSWORD)
+	public User findUserByUserNameAndPassword(@Param("userName") String userName, @Param("password") String password);
+			
+	
+	
 }

@@ -28,10 +28,10 @@ public class QuanLyXeController {
 		modelAndView.addObject("dmxes",dmxes);
 		return modelAndView;
 	}
-	@RequestMapping(value="/manager/admin1",method = RequestMethod.GET)
+	@RequestMapping(value="/manager/manager_memeber",method = RequestMethod.GET)
 	public ModelAndView getAllDmxes() {
 		
-		return new ModelAndView(WebConstants.Views.LIST_DMXE);
+		return new ModelAndView(WebConstants.Views.MANAGER_MEMBER);
 	}
 	
 

@@ -34,4 +34,6 @@ public interface IUserService {
 	
 	public List<User> findByQuyenId(Integer quyenId);
 	
+	public User findUserByUsernameAndPassword(String userName,String password);
+	
 }

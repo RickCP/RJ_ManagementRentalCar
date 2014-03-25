@@ -40,7 +40,7 @@ public class LoginController{
 	}
 	@RequestMapping(value = "/login/sign_in", method = RequestMethod.POST)
 	public ModelAndView doLoginProcess(@Valid LoginForm loginForm,BindingResult result,Model model,HttpServletRequest request)
-	{    
+	{   User user = null;   
 		ModelAndView modelAndView=null;
 		if(result.hasErrors())
 		{
@@ -49,8 +49,8 @@ public class LoginController{
 		}
 		else
 		{   
-			boolean bool=userService.doLogin(loginForm.getUsername(),loginForm.getPassword());
-			if(bool)
+			user = userService.findUserByUsernameAndPassword(loginForm.getUsername(),loginForm.getPassword());
+			if(user != null)
 			{
 				
 			 modelAndView=new ModelAndView("redirect:../manager/admin.jv");
