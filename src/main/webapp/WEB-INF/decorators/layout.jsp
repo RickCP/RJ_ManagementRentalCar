@@ -28,6 +28,7 @@
     <!-- Metis core stylesheet -->
     <link rel="stylesheet" href="${contextPath}/assets/css/main.min.css">
     <link rel="stylesheet" href="${contextPath}/assets/css/theme.css">
+    <link rel="stylesheet" href="${contextPath}/assets/css/DT_bootstrap.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -265,7 +266,7 @@
         <div class="outer">
         
           <div class="inner">
-            <div class="col-lg-12">
+            <div class="row">
            
             <decorator:body></decorator:body>
            
