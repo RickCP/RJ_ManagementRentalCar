@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/jsp/include/taglibs_include.jsp" %>
 <%@ include file="/WEB-INF/jsp/include/server_variables.jsp" %>
 <%@ include file="/WEB-INF/jsp/include/js_variables.jsp" %>
@@ -43,17 +43,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#home">Trang chu</a>
+                <a class="navbar-brand" href="#home">Trang chủ</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">Gioi Thieu</a>
+                    <li><a href="#about">Giới Thiệu</a>
                     </li>
-                    <li><a href="#services">Tin Tuc</a>
+                    <li><a href="#services">Tin Tức</a>
                     </li>
-                    <li><a href="#contact">Lien He</a>
+                    <li><a href="#contact">Liên Hệ</a>
                     </li>
                 </ul>
             </div>
@@ -72,8 +72,9 @@
                         </div>
                         <div class="col-lg-8">
                       	<div class="links"> 
-        				<a href="${contextPath}/login/sign_in.jv" id="login-total">Login</a>  
-                        <a href="${contextPath}/login/sign_up.jv" id="register-total">Register</a> 						<a href="http://321cart.com/demo/sellya/index.php?route=account/wishlist" id="wishlist-total">Wish List(0)</a>  					<a href="http://321cart.com/demo/sellya/index.php?route=checkout/checkout">Checkout</a>
+        				<a href="${contextPath}/login/sign_in.jv" id="login-total">Đăng nhập</a>  
+                        <a href="${contextPath}/login/sign_up.jv" id="register-total">Đăng kí</a> 	
+                        					
     					</div>
                     </div>
                </div>
@@ -83,16 +84,23 @@
         <div class="row">
 				
             <div class="col-md-3">
-            	<div >
-   					 	<div class="button-search"></div>
-    					<input type="text" name="search" placeholder="Search" value="">
-  					</div>
+            	<form class="main-search">
+              	<div class="input-group">
+                <input type="text" class="input-small form-control" placeholder="Live Search ...">
+                <span class="input-group-btn">
+                                    <button class="btn btn-primary btn-sm text-muted" type="button"><i class="fa fa-search"></i></button>
+                                </span> 
+             		 </div>
+           		 </form>
                     
-                <p class="lead">Cac Loai xe</p>
+                <p class="lead">Danh Mục Xe Cho Thuê</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Thue Xe 4 cho</a>
-                    <a href="#" class="list-group-item">Thue xe 7 cho</a>
-                    <a href="#" class="list-group-item">Thue xe 12 cho</a>
+                    <a href="#" class="list-group-item">Thuê xe 24 chỗ</a>
+                    <a href="#" class="list-group-item">Thuê xe 16 chỗ</a>
+                    <a href="#" class="list-group-item">Thuê xe 12 chỗ</a>
+                    <a href="#" class="list-group-item">Thuê xe 7 chỗ</a>
+                    <a href="#" class="list-group-item">Thuê xe 4 chỗ</a>
+                    
                 </div>
             </div>
 
@@ -240,7 +248,7 @@
                             </div>
                         </div>
                     </div>
-
+				
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <h4><a href="#">Like this template?</a>
                         </h4>
@@ -249,7 +257,7 @@
                     </div>
 
                 </div>
-
+				
             </div>
 
         </div>
