@@ -67,8 +67,8 @@
         <div id="t-header" class="row">
            		<div class="col-lg-12">
                         <div  class="col-md-4" id="logo" >
-                        <a href="http://321cart.com/demo/sellya/index.php?route=common/home">
-                        <img src="http://321cart.com/demo/sellya/image/data/logo_sellya.png" title="Sellya" alt="Sellya"></a>
+                        <a href="#">
+                        <img src="../assets/img/logobanner.png"  title="logo" alt="logo"></a>
                         </div>
                         <div class="col-lg-8">
                       	<div class="links"> 
@@ -272,7 +272,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Company 2013 - Template by <a href="http://maxoffsky.com/">Maks</a>
+                    <p>Copyright &copy; Company 2014 -Lê Đình Thoa <a href="#">Maks</a>
                     </p>
                 </div>
             </div>
