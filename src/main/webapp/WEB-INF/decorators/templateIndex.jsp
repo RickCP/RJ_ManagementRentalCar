@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Welcome to my site</title>
+<title>Welcome to my site - Test Commit</title>
 
 <!-- Bootstrap core CSS -->
 <!-- Bootstrap -->
