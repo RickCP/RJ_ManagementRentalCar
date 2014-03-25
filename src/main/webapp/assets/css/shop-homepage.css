@@ -1,7 +1,9 @@
 body {
-  padding-top: 70px
+  padding-top: 70px;
+  background-image:url(../img/p193.png);
 }
-
+#hinhnen{
+	background-color: #F8F8F8;}
 .slide-image {
   width: 100%;
 }
