@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.rick.management.car.spring.constant.WebConstants;
 import com.rick.management.car.spring.persit.domain.User;
 import com.rick.management.car.spring.service.IUserService;
 
@@ -25,6 +26,11 @@ public class UserController {
 			model.addAttribute("users",users);
 		}
 		return modelAndView;
+	}
+	@RequestMapping(value = "/manager/addAccount", method = RequestMethod.GET)
+	public ModelAndView showPageAddAccount(Model model)
+	{
+		return new ModelAndView(WebConstants.Views.ADD_ACCOUNT);
 	}
 
 }
