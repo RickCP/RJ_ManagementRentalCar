@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<decorators defaultdir="/WEB-INF/decorators">
+<decorators defaultdir="/WEB-INF/jsp/decorators">
 	<excludes>
-		<pattern>/nodecorate/*</pattern>
-		<pattern>/styles/*</pattern>
 		<pattern>/assets/*</pattern>
-		<pattern>/scripts/*</pattern>
-		<pattern>/images/*</pattern>
-		<pattern>/index.html</pattern>
 		<pattern>/META-INF/*</pattern>
 	</excludes>
 
-	<decorator name="managerPage" page="layout.jsp">
-		<pattern>/manager/*</pattern>
+	<decorator name="admin" page="admin.jsp">
+		<pattern>/admin/*</pattern>
 	</decorator>
 
-	<decorator name="indexPage" page="templateIndex.jsp">
-		<pattern>/index/*</pattern>
+	<decorator name="welcome" page="welcome.jsp">
+		<pattern>/welcome/*</pattern>
 	</decorator>
 
-	<decorator name="loginPage" page="sign_in.jsp">
-		<pattern>/login/*</pattern>
+	<decorator name="user" page="sign_in.jsp">
+		<pattern>/user/*</pattern>
 	</decorator>
 </decorators>
 

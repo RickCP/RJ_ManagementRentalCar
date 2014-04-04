@@ -1,4 +1,4 @@
-package com.rick.management.car.spring.web.config;
+package com.rick.management.car.spring.web.config.init;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/jsp/include/taglibs_include.jsp"%>
 <%@ include file="/WEB-INF/jsp/include/server_variables.jsp"%>
 <%@ include file="/WEB-INF/jsp/include/js_variables.jsp"%>
@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Register Page</title>
  <link rel="stylesheet" href="${contextPath}/assets/css/datepicker.css">
 <style type="text/css">
 .frmSignUp {
@@ -26,7 +26,7 @@
 	<div class="tab-content">
 		<div id="sign_up" class="tab-pane-active">
 			<form:form method="POST" commandName="userForm"
-				action="${pageContext.request.contextPath }/login/sign_up"
+				action="${pageContext.request.contextPath }/user/sign_up"
 				cssClass="form-signin">
 				<form:errors path="*" cssClass="errorblock" element="div" />
 
@@ -57,7 +57,7 @@
 				<form:input path="diachi" class="form-control" placeholder="Dia Chi" />
 
 
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Đăng kí</button>
 			</form:form>
 		</div>
 </div>

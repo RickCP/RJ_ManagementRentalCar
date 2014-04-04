@@ -2,6 +2,8 @@
 <%@ include file="/WEB-INF/jsp/include/server_variables.jsp"%>
 <%@ include file="/WEB-INF/jsp/include/js_variables.jsp"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@
 		<div id="login" class="tab-pane active">
 			<form:form method="POST" commandName="loginForm"
 				cssClass="form-signin"
-				action="${pageContext.request.contextPath}/login/sign_in">
+				action="${contextPath}/user/sign_in.jv">
 				<form:errors path="*" cssClass="errorblock" element="div" />
 				<div class="error">${message}</div>
 				<form:label path="message"></form:label>

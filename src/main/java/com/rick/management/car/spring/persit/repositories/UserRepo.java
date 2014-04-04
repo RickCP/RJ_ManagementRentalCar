@@ -9,6 +9,9 @@ import com.rick.management.car.spring.persit.BaseRepo;
 import com.rick.management.car.spring.persit.domain.*;
 
 public interface UserRepo extends BaseRepo<User, Integer>, UserCustomRepo {
+	@Query("SELECT u FROM User u WHERE u.userName = :userName")
+	public User findByUsername(@Param("userName") String userName);
+	
 	@Query("SELECT u FROM User u ")
 	public List<User> findAll();
 

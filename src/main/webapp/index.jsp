@@ -20,6 +20,6 @@
 </style>
 </head>
 <body>
- <c:redirect url="index/client.jv"/>
+ <c:redirect url="welcome/index.jv"/>
 </body>
 </html>

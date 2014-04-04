@@ -11,28 +11,28 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.rick.management.car.spring.constant.WebConstants;
 import com.rick.management.car.spring.persit.domain.DmXe;
-import com.rick.management.car.spring.persit.domain.HangXe;
-import com.rick.management.car.spring.service.IQuanLyXe;
+import com.rick.management.car.spring.service.IDanhMucXeService;
 
 @Controller
 public class QuanLyXeController {
 	@Autowired
-	private IQuanLyXe quanLyXeService;
-	@RequestMapping(value="/manager/admin",method = RequestMethod.GET)
+	private IDanhMucXeService danhMucXeService;
+	@RequestMapping(value="/admin/list",method = RequestMethod.GET)
 	public ModelAndView getAllDmXes()
 	{
 		ModelAndView modelAndView =new ModelAndView(WebConstants.Views.LIST_DMXE);
 		List<DmXe> dmxes=new ArrayList<DmXe>();
-		dmxes =quanLyXeService.getAllDmxes();
+		dmxes =danhMucXeService.findAllDmxes();
 		System.out.println(dmxes.get(0).getTenXe());
 		modelAndView.addObject("dmxes",dmxes);
 		return modelAndView;
 	}
-	@RequestMapping(value="/manager/manager_memeber",method = RequestMethod.GET)
+	@RequestMapping(value="/admin/manager_memeber",method = RequestMethod.GET)
 	public ModelAndView getAllDmxes() {
 		
 		return new ModelAndView(WebConstants.Views.MANAGER_MEMBER);
 	}
+	
 	
 
 }

@@ -42,6 +42,17 @@ public class DmXe implements java.io.Serializable {
 
 	@Column(name = "hinh_anh")
 	private String hinhAnh;
+	
+	@Column(name = "hinh_anh_slider")
+	private String hinhAnhSlider;
+
+	public String getHinhAnhSlider() {
+		return hinhAnhSlider;
+	}
+
+	public void setHinhAnhSlider(String hinhAnhSlider) {
+		this.hinhAnhSlider = hinhAnhSlider;
+	}
 
 	@Column(name = "thong_tin")
 	private String thongTin;

@@ -17,7 +17,7 @@ import com.rick.management.car.spring.service.IUserService;
 public class UserController {
 	@Autowired
 	private IUserService userService;
-	@RequestMapping(value = "/manager/listUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/listUser", method = RequestMethod.GET)
 	public ModelAndView showListUsers(Model model)
 	{   ModelAndView modelAndView = new ModelAndView("manager/listUserPage");
 		List<User> users = userService.findByQuyenId(1);
@@ -27,7 +27,7 @@ public class UserController {
 		}
 		return modelAndView;
 	}
-	@RequestMapping(value = "/manager/addAccount", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/addAccount", method = RequestMethod.GET)
 	public ModelAndView showPageAddAccount(Model model)
 	{
 		return new ModelAndView(WebConstants.Views.ADD_ACCOUNT);

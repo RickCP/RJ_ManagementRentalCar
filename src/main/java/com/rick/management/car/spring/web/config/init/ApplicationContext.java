@@ -1,4 +1,4 @@
-package com.rick.management.car.spring.web.config;
+package com.rick.management.car.spring.web.config.init;
 
 
 import java.util.Properties;
@@ -21,13 +21,14 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan(basePackages="com.rick.management.car.spring.web.controller")
+@ComponentScan(basePackages="com.rick.management.car.spring")
 @EnableWebMvc
 @ImportResource("classpath:applicationContext.xml")
 @PropertySource("classpath:application.properties")
@@ -135,6 +136,11 @@ public class ApplicationContext {
 
         return viewResolver;
     }
+    
+    @Bean 
+	public LocalValidatorFactoryBean validator() {
+		return new LocalValidatorFactoryBean();
+	}
     
     
 

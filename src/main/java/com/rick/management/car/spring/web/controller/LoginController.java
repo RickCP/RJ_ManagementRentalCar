@@ -31,14 +31,14 @@ public class LoginController{
 	private IUserService userService;
 	@Autowired
 	private IQuanLyXe quanLyXeService;
-	@RequestMapping(value = "/login/sign_in", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/sign_in", method = RequestMethod.GET)
 	public ModelAndView doLogin(HttpServletRequest request)
 	{ 
 		ModelAndView modelAndView = new ModelAndView(WebConstants.Views.SIGN_IN);
 		modelAndView.addObject("loginForm", new LoginForm());
 		return modelAndView;
 	}
-	@RequestMapping(value = "/login/sign_in", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/sign_in", method = RequestMethod.POST)
 	public ModelAndView doLoginProcess(@Valid LoginForm loginForm,BindingResult result,Model model,HttpServletRequest request)
 	{   User user = null;   
 		ModelAndView modelAndView=null;
@@ -53,7 +53,7 @@ public class LoginController{
 			if(user != null)
 			{
 				
-			 modelAndView=new ModelAndView("redirect:../manager/admin.jv");
+			 modelAndView=new ModelAndView("redirect:../admin/list.jv");
 			}
 			else
 			{   
@@ -69,7 +69,7 @@ public class LoginController{
 		}
 		return modelAndView;
 	}
-	@RequestMapping(value = "/login/sign_up", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/sign_up", method = RequestMethod.GET)
 	public ModelAndView createUser(Model model) {
 		ModelAndView modelAndView = new ModelAndView(WebConstants.Views.SIGN_UP);
 		UserForm userForm = new UserForm();
@@ -78,7 +78,7 @@ public class LoginController{
 		modelAndView.addObject("userForm", userForm);
 		return modelAndView;
 	}
-	@RequestMapping(value = "/login/sign_up", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/sign_up", method = RequestMethod.POST)
 	public ModelAndView processCreateUser(@Valid UserForm userForm,
 			BindingResult result, Model model)
 
