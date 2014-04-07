@@ -9,7 +9,7 @@
 <html lang="en">
   <head>
     
-    <title>Metis</title>
+    <title> <decorator:title default="Chào mừng bạn đến với trang điều hành quản trị viên.">Chào mừng bạn đến với trang điều hành quản trị viên</decorator:title> </title>
 
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +41,7 @@
 
     <!--Modernizr 3.0-->
     <script src="${contextPath}/assets/lib/modernizr-build.min.js"></script>
+    <decorator:head></decorator:head>
   </head>
   <body>
     <div id="wrap">
@@ -64,7 +65,7 @@
           <div class="topnav">
             <div class="btn-toolbar">
               <div class="btn-group">
-                <a href="${contextPath}/login/sign_in.jv" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom" class="btn btn-metis-1 btn-sm">
+                <a href="${contextPath}/user/sign_out.jv" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom" class="btn btn-metis-1 btn-sm">
                   <i class="fa fa-power-off"></i>
                 </a> 
               </div>
@@ -144,7 +145,7 @@
                 </a>
 					<ul>
               			<li class="">
-                		<a href="dashboard.html">
+                		<a href="${contextPath}/admin/manager_member.jv">
                   		<i class="fa fa-angle-right"></i>&nbsp;Thông Tin Nhân viên
                 		</a> 
 					  </li>
@@ -266,12 +267,7 @@
         <div class="outer">
         
           <div class="inner">
-            <div class="row">
-           
-            <decorator:body></decorator:body>
-           
-            
-			</div>
+          <decorator:body></decorator:body>
           </div>
 
           <!-- end .inner -->

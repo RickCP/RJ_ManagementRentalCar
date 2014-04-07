@@ -20,7 +20,7 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/welcome/**", method = RequestMethod.GET)
-	public ModelAndView findAllDmxes()
+	public ModelAndView viewWelcomePageWithSuffixWelcome()
 	{
 		ModelAndView modelAndView =new ModelAndView(WebConstants.Views.CLIENT_INDEX);
 		List<DmXe> dmxes=new ArrayList<DmXe>();
@@ -29,12 +29,24 @@ public class HomeController {
 		return modelAndView;
 	}
 	@RequestMapping(value="/")
-	public ModelAndView mainPage() {
+	public ModelAndView viewWelcomePage() {
 		ModelAndView modelAndView =new ModelAndView(WebConstants.Views.CLIENT_INDEX);
 		List<DmXe> dmxes=new ArrayList<DmXe>();
 		dmxes =danhMucXeService.findAllDmxes();
 		modelAndView.addObject("dmxes",dmxes);
 		return modelAndView;
 	}
+	@RequestMapping(value  = "/admin/**" , method = RequestMethod.GET)
+	public String viewAdminPage()
+	{
+		return WebConstants.Views.ADMIN_PAGE;
+	}
+	
+	@RequestMapping(value = "/manager/**" , method = RequestMethod.GET)
+	public String viewManagerPage()
+	{
+		return WebConstants.Views.MANAGER_PAGE;
+	}
+	
 	
 	}

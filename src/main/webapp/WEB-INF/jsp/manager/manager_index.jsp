@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Chào mừng bạn đến với trang quản trị viên</title>
+<title>Manager Page</title>
 </head>
 <body>
-Trang Dành Cho Người Quản Trị Viên.
+	Trang Dành Cho Người Quản Lý.
 </body>
 </html>

@@ -50,8 +50,8 @@
 		<decorator:body></decorator:body>
 		 <div class="text-center">
         <ul class="list-inline">
-          <li> <a class="text-muted" href="${contextPath}/login/forgot_pass.jv" data-toggle="tab">Forgot Password</a>  </li>
-          <li> <a class="text-muted" href="${contextPath}/login/sign_up.jv"  data-toggle="tab">Signup</a>  </li>
+          <li> <a class="text-muted" href="${contextPath}/user/forgotpass.jv" data-toggle="tab">Forgot Password</a>  </li>
+          <li> <a class="text-muted" href="${contextPath}/user/sign_up.jv"  data-toggle="tab">Signup</a>  </li>
         </ul>
       </div>
 	</div>

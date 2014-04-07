@@ -36,6 +36,7 @@
 			<form:form method="POST" commandName="loginForm"
 				cssClass="form-signin"
 				action="${contextPath}/user/sign_in.jv">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				<form:errors path="*" cssClass="errorblock" element="div" />
 				<div class="error">${message}</div>
 				<form:label path="message"></form:label>

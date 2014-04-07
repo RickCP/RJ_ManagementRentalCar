@@ -1,5 +1,8 @@
+<%@ include file="/WEB-INF/jsp/include/taglibs_include.jsp" %>
+<%@ include file="/WEB-INF/jsp/include/server_variables.jsp" %>
+<%@ include file="/WEB-INF/jsp/include/js_variables.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -107,44 +110,23 @@
 							</tr>
 
 						</thead>
-
+						
 						<tbody role="alert" aria-live="polite" aria-relevant="all">
+						<c:forEach var="user" items="${userForms}">
 							<tr class="odd">
-								<td class=" sorting_1">Gecko</td>
-								<td class=" ">Firefox 1.0</td>
-								<td class=" ">Win 98+ / OSX.2+</td>
-								<td class=" ">1.7</td>
-								<td class=" ">A</td>
-								<td class=" sorting_1">Gecko</td>
-								<td class=" ">Firefox 2.0</td>
-								<td class=" ">Win 98+ / OSX.2+</td>
-								<td class=" ">1.8</td>
-								<td class=" ">A</td>
+								<td class=" sorting_1">${user.quanliId}</td>
+								<td class=" ">${user.hoTen}</td>
+								<td class=" ">${user.userName}</td>
+								<td class=" ">${user.password}</td>
+								<td class=" ">${user.ngaySinh}</td>
+								<td class=" sorting_1">${user.gioiTinh}</td>
+								<td class=" ">${user.dienThoai}</td>
+								<td class=" ">${user.cmnd}</td>
+								<td class=" ">${user.email}</td>
+								<td class=" ">${user.diachi}</td>
 							</tr>
-							<tr class="even">
-								<td class=" sorting_1">Gecko</td>
-								<td class=" ">Firefox 1.5</td>
-								<td class=" ">Win 98+ / OSX.2+</td>
-								<td class=" ">1.8</td>
-								<td class=" ">A</td>
-								<td class=" sorting_1">Gecko</td>
-								<td class=" ">Firefox 2.0</td>
-								<td class=" ">Win 98+ / OSX.2+</td>
-								<td class=" ">1.8</td>
-								<td class=" ">A</td>
-							</tr>
-							<tr class="odd">
-								<td class=" sorting_1">Gecko</td>
-								<td class=" ">Firefox 2.0</td>
-								<td class=" ">Win 98+ / OSX.2+</td>
-								<td class=" ">1.8</td>
-								<td class=" ">A</td>
-								<td class=" sorting_1">Gecko</td>
-								<td class=" ">Firefox 2.0</td>
-								<td class=" ">Win 98+ / OSX.2+</td>
-								<td class=" ">1.8</td>
-								<td class=" ">A</td>
-							</tr>
+					   </c:forEach>
+							
 						</tbody>
 					</table>
 					<div class="row">

@@ -112,11 +112,17 @@ public class LoginController{
 		}
 		return modelAndView;
 	}
+	@RequestMapping(value = "/user/forgotpass", method = RequestMethod.GET)
+	public String viewForgotPasswordPage()
+	{
+		return WebConstants.Views.FORGOTPASS;
+	}
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 		
 	}
+	
 
 }
