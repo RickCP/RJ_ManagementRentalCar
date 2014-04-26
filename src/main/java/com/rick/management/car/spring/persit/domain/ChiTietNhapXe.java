@@ -14,6 +14,11 @@ import javax.persistence.Table;
 @Table(name = "chi_tiet_nhap_xe")
 public class ChiTietNhapXe implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "chi_tiet_nhap_xe_id")
@@ -31,12 +36,12 @@ public class ChiTietNhapXe implements java.io.Serializable {
 	private Integer soLuong;
 
 	@Column(name = "don_gia")
-	private Double donGia;
+	private Float donGia;
 
 	public ChiTietNhapXe() {
 	}
 
-	public ChiTietNhapXe(NhapXe nhapXe, DmXe dmXe, Integer soLuong, Double donGia) {
+	public ChiTietNhapXe(NhapXe nhapXe, DmXe dmXe, Integer soLuong, Float donGia) {
 		this.nhapXe = nhapXe;
 		this.dmXe = dmXe;
 		this.soLuong = soLuong;
@@ -75,11 +80,11 @@ public class ChiTietNhapXe implements java.io.Serializable {
 		this.soLuong = soLuong;
 	}
 
-	public Double getDonGia() {
+	public Float getDonGia() {
 		return this.donGia;
 	}
 
-	public void setDonGia(Double donGia) {
+	public void setDonGia(Float donGia) {
 		this.donGia = donGia;
 	}
 

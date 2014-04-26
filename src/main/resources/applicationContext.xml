@@ -23,5 +23,5 @@
 
 	<!-- Configures Spring Data JPA and sets the base package of my DAOs. -->
 	<context:component-scan base-package="com.rick.management.car.spring" />
-	<jpa:repositories base-package="com.rick.management.car.spring.persit.repositories" />
+	<jpa:repositories base-package="com.rick.management.car.spring.persit.jparepositories" />
 </beans>

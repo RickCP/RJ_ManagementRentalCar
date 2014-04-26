@@ -8,7 +8,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationFa
  *
  */
 public class JvAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
-	private static final String FAILURE_URL = "/user/sign_in.jv?error=1";
+	private static final String FAILURE_URL = "/user/login?error=1";
 	public JvAuthenticationFailureHandler() {
 		/**
 		 * for keeping ModelAttribute in target model;

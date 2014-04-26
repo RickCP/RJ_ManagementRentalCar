@@ -1,14 +1,12 @@
 package com.rick.management.car.spring.persit.domain;
 
-import java.util.List;
-
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,6 +16,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "dm_xe")
 public class DmXe implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -42,26 +45,18 @@ public class DmXe implements java.io.Serializable {
 
 	@Column(name = "hinh_anh")
 	private String hinhAnh;
-	
-	@Column(name = "hinh_anh_slider")
-	private String hinhAnhSlider;
-
-	public String getHinhAnhSlider() {
-		return hinhAnhSlider;
-	}
-
-	public void setHinhAnhSlider(String hinhAnhSlider) {
-		this.hinhAnhSlider = hinhAnhSlider;
-	}
 
 	@Column(name = "thong_tin")
 	private String thongTin;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dmXe")
-	private List<ChiTietDatXe> chiTietDatXes;
+	@Column(name = "hinh_anh_slider")
+	private String hinhAnhSlider;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dmXe")
-	private List<ChiTietNhapXe> chiTietNhapXes;
+	private Set<ChiTietDatXe> chiTietDatXes = new HashSet<ChiTietDatXe>(0);
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dmXe")
+	private Set<ChiTietNhapXe> chiTietNhapXes = new HashSet<ChiTietNhapXe>(0);
 
 	public DmXe() {
 	}
@@ -70,9 +65,10 @@ public class DmXe implements java.io.Serializable {
 		this.tenXe = tenXe;
 	}
 
-	public DmXe(LoaiXe loaiXe, String tenXe, Integer tongSoLuong, Integer soLuongThue, Double giaThueXe,
-			String hinhAnh, String thongTin, List<ChiTietDatXe> chiTietDatXes,
-			List<ChiTietNhapXe> chiTietNhapXes) {
+	public DmXe(LoaiXe loaiXe, String tenXe, Integer tongSoLuong,
+			Integer soLuongThue, Double giaThueXe, String hinhAnh,
+			String thongTin, String hinhAnhSlider,
+			Set<ChiTietDatXe> chiTietDatXes, Set<ChiTietNhapXe> chiTietNhapXes) {
 		this.loaiXe = loaiXe;
 		this.tenXe = tenXe;
 		this.tongSoLuong = tongSoLuong;
@@ -80,6 +76,7 @@ public class DmXe implements java.io.Serializable {
 		this.giaThueXe = giaThueXe;
 		this.hinhAnh = hinhAnh;
 		this.thongTin = thongTin;
+		this.hinhAnhSlider = hinhAnhSlider;
 		this.chiTietDatXes = chiTietDatXes;
 		this.chiTietNhapXes = chiTietNhapXes;
 	}
@@ -148,19 +145,27 @@ public class DmXe implements java.io.Serializable {
 		this.thongTin = thongTin;
 	}
 
-	public List<ChiTietDatXe> getChiTietDatXes() {
+	public String getHinhAnhSlider() {
+		return this.hinhAnhSlider;
+	}
+
+	public void setHinhAnhSlider(String hinhAnhSlider) {
+		this.hinhAnhSlider = hinhAnhSlider;
+	}
+
+	public Set<ChiTietDatXe> getChiTietDatXes() {
 		return this.chiTietDatXes;
 	}
 
-	public void setChiTietDatXes(List<ChiTietDatXe> chiTietDatXes) {
+	public void setChiTietDatXes(Set<ChiTietDatXe> chiTietDatXes) {
 		this.chiTietDatXes = chiTietDatXes;
 	}
 
-	public List<ChiTietNhapXe> getChiTietNhapXes() {
+	public Set<ChiTietNhapXe> getChiTietNhapXes() {
 		return this.chiTietNhapXes;
 	}
 
-	public void setChiTietNhapXes(List<ChiTietNhapXe> chiTietNhapXes) {
+	public void setChiTietNhapXes(Set<ChiTietNhapXe> chiTietNhapXes) {
 		this.chiTietNhapXes = chiTietNhapXes;
 	}
 

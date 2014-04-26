@@ -2,7 +2,6 @@ package com.rick.management.car.spring.service;
 
 import java.util.List;
 
-import com.rick.management.car.spring.persit.domain.Quyen;
 import com.rick.management.car.spring.persit.domain.User;
 
 public interface IUserService {
@@ -28,11 +27,6 @@ public interface IUserService {
 	 */
 	public User findById(int id);
 	
-	public boolean doLogin(String username, String password);
-	
-	public Quyen getQuyenById(int id);
-	
-	public List<User> findByQuyenId(Integer quyenId);
 	
 	public User findUserByUsernameAndPassword(String userName,String password);
 	

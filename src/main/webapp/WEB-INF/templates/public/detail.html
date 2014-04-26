@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/public/layout">
+<head>
+<meta charset="utf-8" />
+	<title>Trang Chi Tiết Xe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="LDT, a fully featured, responsive, HTML5, Bootstrap admin template." />
+	<meta name="author" content="Lê Đình Thoa" />
+	<!-- The styles -->
+	<link  href="css/bootstrap-cerulean.css" rel="stylesheet" th:href="@{/resources/css/bootstrap-cerulean.css}" />
+	<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" th:href="@{/resources/css/bootstrap-responsive.css}" />
+	<link href="css/charisma-app.css" rel="stylesheet" th:href="@{/resources/css/charisma-app.css}" />
+	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet" th:href="@{/resources/css/jquery-ui-1.8.21.custom.css}" />
+	<link href='css/fullcalendar.css' rel='stylesheet' th:href="@{/resources/css/fullcalendar.css}" />
+	<link href='css/fullcalendar.print.css' rel='stylesheet'  media='print' th:href="@{/resources/css/fullcalendar.print.css}" />
+	<link href='css/chosen.css' rel='stylesheet' th:href="@{/resources/css/chosen.css}"/>
+	<link href='css/uniform.default.css' rel='stylesheet' th:href="@{/resources/css/uniform.default.css}" />
+	<link href='css/colorbox.css' rel='stylesheet' th:href="@{/resources/css/colorbox.css}" />
+	<link href='css/jquery.cleditor.css' rel='stylesheet' th:href="@{/resources/css/jquery.cleditor.css}" />
+	<link href='css/jquery.noty.css' rel='stylesheet' th:href="@{/resources/css/jquery.noty.css}" />
+	<link href='css/noty_theme_default.css' rel='stylesheet' th:href="@{/resources/css/noty_theme_default.css}" />
+	<link href='css/elfinder.min.css' rel='stylesheet' th:href="@{/resources/css/elfinder.min.css}" />
+	<link href='css/elfinder.theme.css' rel='stylesheet' th:href="@{/resources/css/elfinder.theme.css}" />
+	<link href='css/jquery.iphone.toggle.css' rel='stylesheet' th:href="@{/resources/css/jquery.iphone.toggle.css}" />
+	<link href='css/opa-icons.css' rel='stylesheet' th:href="@{/resources/css/opa-icons.css}" />
+	<link href='css/uploadify.css' rel='stylesheet' th:href="@{/resources/css/uploadify.css}" />
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- The fav icon -->
+	<link rel="shortcut icon" href="img/favicon.ico" th:href="@{/resources/img/favicon.ico}" />
+</head>
+<body>
+	<div layout:fragment="content">
+		<div
+			th:replace="/public/menu :: ${menu == 'menu-loged' } ? 'menu-loged' : 'menu'">
+			Menu static</div>
+		<div class="row">
+
+			<div class="col-md-3">
+				<p class="lead">Tra Cứu Loại Xe</p>
+				<div class="list-group">
+					<a href="#" class="list-group-item">Hãng Xe</a> <a href="#"
+						class="list-group-item">Số Chổ Ngồi</a> <a href="#"
+						class="list-group-item">Dịch vụ</a>
+				</div>
+			</div>
+			<div class="col-md-9">
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well">
+						<h2><i class="icon-info-sign"></i> Introduction</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<h1>Charisma <small>free, premium quality, responsive, multiple skin admin template.</small></h1>
+						<p>Its a live demo of the template. I have created Charisma to ease the repeat work I have to do on my projects. Now I re-use Charisma as a base for my admin panel work and I am sharing it with you :)</p>
+						<p><b>All pages in the menu are functional, take a look at all, please share this with your followers.</b></p>
+						
+						<p class="center">
+							<a href="http://usman.it/free-responsive-admin-template" class="btn btn-large btn-primary"><i class="icon-chevron-left icon-white"></i> Back to article</a> 
+							<a href="http://usman.it/free-responsive-admin-template" class="btn btn-large"><i class="icon-download-alt"></i> Download Page</a>
+						</p>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- external javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<!-- jQuery -->
+	<script src="js/jquery-1.7.2.min.js" th:src="@{/resources/js/jquery-1.7.2.min.js}"></script>
+	<!-- jQuery UI -->
+	<script src="js/jquery-ui-1.8.21.custom.min.js" th:src="@{/resources/js/jquery-ui-1.8.21.custom.min.js}"></script>
+	<!-- transition / effect library -->
+	<script src="js/bootstrap-transition.js" th:src="@{/resources/js/bootstrap-transition.js}"></script>
+	<!-- alert enhancer library -->
+	<script src="js/bootstrap-alert.js" th:src="@{/resources/js/bootstrap-alert.js}"></script>
+	<!-- modal / dialog library -->
+	<script src="js/bootstrap-modal.js" th:src="@{/resources/js/bootstrap-modal.js}"></script>
+	<!-- custom dropdown library -->
+	<script src="js/bootstrap-dropdown.js" th:src="@{/resources/js/bootstrap-dropdown.js}"></script>
+	<!-- scrolspy library -->
+	<script src="js/bootstrap-scrollspy.js" th:src="@{/resources/js/bootstrap-scrollspy.js}"></script>
+	<!-- library for creating tabs -->
+	<script src="js/bootstrap-tab.js" th:src="@{/resources/js/bootstrap-tab.js}"></script>
+	<!-- library for advanced tooltip -->
+	<script src="js/bootstrap-tooltip.js" th:src="@{/resources/js/bootstrap-tooltip.js}"></script>
+	<!-- popover effect library -->
+	<script src="js/bootstrap-popover.js" th:src="@{/resources/js/bootstrap-popover.js}"></script>
+	<!-- button enhancer library -->
+	<script src="js/bootstrap-button.js" th:src="@{/resources/js/bootstrap-button.js}"></script>
+	<!-- accordion library (optional, not used in demo) -->
+	<script src="js/bootstrap-collapse.js" th:src="@{/resources/js/bootstrap-collapse.js}"></script>
+	<!-- carousel slideshow library (optional, not used in demo) -->
+	<script src="js/bootstrap-carousel.js" th:src="@{/resources/js/bootstrap-carousel.js}"></script>
+	<!-- autocomplete library -->
+	<script src="js/bootstrap-typeahead.js" th:src="@{/resources/js/bootstrap-typeahead.js}"></script>
+	<!-- tour library -->
+	<script src="js/bootstrap-tour.js" th:src="@{/resources/js/bootstrap-tour.js}"></script>
+	<!-- library for cookie management -->
+	<script src="js/jquery.cookie.js" th:src="@{/resources/js/jquery.cookie.js}"></script>
+	<!-- calander plugin -->
+	<script src='js/fullcalendar.min.js' th:src="@{/resources/js/fullcalendar.min.js}"></script>
+	<!-- data table plugin -->
+	<script src='js/jquery.dataTables.min.js' th:src="@{/resources/js/jquery.dataTables.min.js}"></script>
+
+	<!-- chart libraries start -->
+	<script src="js/excanvas.js" th:src="@{/resources/js/excanvas.js}"></script>
+	<script src="js/jquery.flot.min.js" th:src="@{/resources/js/jquery.flot.min.js}"></script>
+	<script src="js/jquery.flot.pie.min.js" th:src="@{/resources/js/jquery.flot.pie.min.js}"></script>
+	<script src="js/jquery.flot.stack.js" th:src="@{/resources/js/jquery.flot.stack.js}"></script>
+	<script src="js/jquery.flot.resize.min.js" th:src="@{/resources/js/jquery.flot.resize.min.js}"></script>
+	<!-- chart libraries end -->
+
+	<!-- select or dropdown enhancer -->
+	<script src="js/jquery.chosen.min.js" th:src="@{/resources/js/jquery.chosen.min.js}"></script>
+	<!-- checkbox, radio, and file input styler -->
+	<script src="js/jquery.uniform.min.js" th:src="@{/resources/js/jquery.uniform.min.js}"></script>
+	<!-- plugin for gallery image view -->
+	<script src="js/jquery.colorbox.min.js" th:src="@{/resources/js/jquery.colorbox.min.js}"></script>
+	<!-- rich text editor library -->
+	<script src="js/jquery.cleditor.min.js" th:src="@{/resources/js/jquery.cleditor.min.js}"></script>
+	<!-- notification plugin -->
+	<script src="js/jquery.noty.js" th:src="@{/resources/js/jquery.noty.js}" ></script>
+	<!-- file manager library -->
+	<script src="js/jquery.elfinder.min.js" th:src="@{/resources/js/jquery.elfinder.min.js}"></script>
+	<!-- star rating plugin -->
+	<script src="js/jquery.raty.min.js" th:src="@{/resources/js/jquery.raty.min.js}"></script>
+	<!-- for iOS style toggle switch -->
+	<script src="js/jquery.iphone.toggle.js" th:src="@{/resources/js/jquery.iphone.toggle.js}"></script>
+	<!-- autogrowing textarea plugin -->
+	<script src="js/jquery.autogrow-textarea.js" th:src="@{/resources/js/jquery.autogrow-textarea.js}"></script>
+	<!-- multiple file upload plugin -->
+	<script src="js/jquery.uploadify-3.1.min.js" th:src="@{/resources/js/jquery.uploadify-3.1.min.js}"></script>
+	<!-- history.js for cross-browser state change on ajax -->
+	<script src="js/jquery.history.js" th:src="@{/resources/js/jquery.history.js}"></script>
+	<!-- application script for Charisma demo -->
+	<script src="js/charisma.js" th:src="@{/resources/js/charisma.js}"></script>
+</body>
+</html>

@@ -4,58 +4,35 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.rick.management.car.spring.dao.UserDao;
-import com.rick.management.car.spring.persit.domain.Quyen;
 import com.rick.management.car.spring.persit.domain.User;
-import com.rick.management.car.spring.persit.repositories.UserRepo;
+import com.rick.management.car.spring.persit.jparepositories.UserRepoJpa;
+
 @Service
 public class UserService extends BaseService implements IUserService {
-    @Autowired
-    private UserDao userDao;
-    @Autowired
-    private UserRepo userRepo;
+	@Autowired
+	private UserRepoJpa userRepoJpa;
+
 	@Override
 	public User create(User user) {
-		// TODO Auto-generated method stub
-		return userDao.create(user);
+		return userRepoJpa.save(user);
 	}
 
 	@Override
 	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return userRepo.findAll();
+
+		return userRepoJpa.findAll();
 	}
 
 	@Override
 	public User findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	@Transactional
-	public boolean doLogin(String username, String password) {
-		return userDao.doLogin(username, password);
-	}
-
-	@Override
-	@Transactional
-	public Quyen getQuyenById(int id) {
-		// TODO Auto-generated method stub
-		return userDao.getQuyenById(id);
-	}
-
-	@Override
-	@Transactional
-	public List<User> findByQuyenId(Integer quyenId) {
-		return userRepo.findByQuyenId(quyenId);
+		return userRepoJpa.findOne(id);
 	}
 
 	@Override
 	public User findUserByUsernameAndPassword(String userName, String password) {
-		return userRepo.findUserByUserNameAndPassword(userName, password);
+		return userRepoJpa.findUserByUserNameAndPassword(userName, password);
 	}
 
 }

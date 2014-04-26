@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Trang Chủ</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" th:href="@{/resources/css/bootstrap.css}" />
+
+    <!-- Add custom CSS here -->
+    <link href="css/shop-homepage.css" rel="stylesheet" th:href="@{/resources/css/shop-homepage.css}"  />
+
+</head>
+
+<body>
+
+													   	
+
+    <div class="container">
+		<div layout:fragment="content">
+		</div>
+         
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr/>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; LDT 2014 - by <a href="http://ldt.com">Lê Đình Thoa</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js" th:src="@{/resources/js/jquery-1.10.2.js}" />
+    <script src="js/bootstrap.js" th:src="@{/resources/js/bootstrap.js}"  />
+
+</body>
+
+</html>

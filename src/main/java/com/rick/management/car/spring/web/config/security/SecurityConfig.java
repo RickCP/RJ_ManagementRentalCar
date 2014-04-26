@@ -40,6 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		 web
 	      .ignoring()
 	         .antMatchers("/assets/**"); // #3
+		 web.ignoring().antMatchers("/resources/**");
+		
 	}
 	@Bean 
 	public AuthenticationManager jvAuthenticationManager() throws Exception {
@@ -50,20 +52,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
         .authorizeRequests()
-        	.antMatchers("/assets/**", "/user/sign_up.jv", "/welcome/**" , "/user/sign_in.jv" ).permitAll()  
-            .antMatchers("/admin/**").hasAuthority("USER")
+        	.antMatchers("/resources/**", "/","/user/login" ).permitAll()  
+            .antMatchers("/user/**").hasAuthority("USER")
             .and()
         .formLogin()
-            .loginPage("/user/sign_in.jv")
+            .loginPage("/user/login")
             .usernameParameter("username")
             .passwordParameter("password")
-            .loginProcessingUrl("/user/sign_in.jv")
+            .loginProcessingUrl("/user/login")
             .failureHandler(new JvAuthenticationFailureHandler())
             .successHandler(jvAuthenticationSuccessHandler)
-            .defaultSuccessUrl("/welcome/index.jv")
+            .defaultSuccessUrl("/default")
             .permitAll();
-		
-		http.logout().logoutUrl("/user/sign_out.jv").logoutSuccessUrl("/user/sign_in.jv");
+		http.csrf().disable();
+		http.logout().logoutUrl("/user/logout").logoutSuccessUrl("/");
 	}
 
 }

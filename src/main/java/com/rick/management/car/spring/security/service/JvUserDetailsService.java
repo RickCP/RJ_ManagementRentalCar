@@ -8,11 +8,10 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.rick.management.car.spring.persit.domain.User;
-import com.rick.management.car.spring.persit.repositories.UserRepo;
+import com.rick.management.car.spring.persit.jparepositories.UserRepoJpa;
 import com.rick.management.car.spring.security.bean.JvUserDetails;
 
 /**
@@ -23,12 +22,12 @@ import com.rick.management.car.spring.security.bean.JvUserDetails;
 @Service
 public class JvUserDetailsService implements UserDetailsService {
 	@Autowired
-	private UserRepo userRepo;
+	private UserRepoJpa userRepoJpa;
 
 	@Override
 	public UserDetails loadUserByUsername(String userName)
 			throws UsernameNotFoundException {
-		User user = userRepo.findByUsername(userName);
+		User user = userRepoJpa.findByuserName(userName);
 		UserDetails userDetails = null;
 		if (user == null) {
 			throw new UsernameNotFoundException(String.format(

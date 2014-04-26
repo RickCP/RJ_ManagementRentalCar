@@ -1,4 +1,4 @@
-<sitemesh>
+<!-- <sitemesh>
 	<property name="decorators-file" value="/WEB-INF/decorators.xml" />
 	<excludes file="${decorators-file}" />
 
@@ -14,4 +14,4 @@
 		</mapper>
 	</decorator-mappers>
 </sitemesh>
-
+ -->

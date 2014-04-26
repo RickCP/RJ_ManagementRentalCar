@@ -19,7 +19,9 @@ import org.springframework.stereotype.Component;
 public class JvAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws IOException, ServletException {
+		
 	 super.onAuthenticationSuccess(request, response, authentication);
+	 
  }
 
 }

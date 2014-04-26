@@ -2,6 +2,8 @@
 <%@ include file="/WEB-INF/jsp/include/server_variables.jsp" %>
 <%@ include file="/WEB-INF/jsp/include/js_variables.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,14 +52,14 @@
 		<decorator:body></decorator:body>
 		 <div class="text-center">
         <ul class="list-inline">
-          <li> <a class="text-muted" href="${contextPath}/user/forgotpass.jv" data-toggle="tab">Forgot Password</a>  </li>
-          <li> <a class="text-muted" href="${contextPath}/user/sign_up.jv"  data-toggle="tab">Signup</a>  </li>
+          <li> <a class="text-muted" href="${contextPath}/user/forgotpass.jv" data-toggle="tab">Quên mật khẩu</a>  </li>
+          <li> <a class="text-muted" href="${contextPath}/user/sign_up.jv"  data-toggle="tab">Đăng nhập</a>  </li>
         </ul>
       </div>
 	</div>
 
-	<script src="assets/lib/jquery.min.js"></script>
-	<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+	<script src="${contextPath}/assets/lib/jquery.min.js"></script>
+	<script src="${contextPath}/assets/lib/bootstrap/js/bootstrap.js"></script>
 	<script>
 		$('.list-inline li > a').click(function() {
 			var activeForm = $(this).attr('href') + ' > form';

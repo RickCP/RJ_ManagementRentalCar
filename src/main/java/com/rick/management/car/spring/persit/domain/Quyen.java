@@ -1,14 +1,12 @@
 package com.rick.management.car.spring.persit.domain;
 
-import java.util.List;
-
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,6 +14,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "quyen")
 public class Quyen implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -25,8 +28,8 @@ public class Quyen implements java.io.Serializable {
 	@Column(name = "quyen_name")
 	private String quyenName;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "quyen")
-	private List<DmQuyen> dmQuyens;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "quyen")
+	private Set<User> users = new HashSet<User>(0);
 
 	public Quyen() {
 	}
@@ -35,9 +38,9 @@ public class Quyen implements java.io.Serializable {
 		this.quyenName = quyenName;
 	}
 
-	public Quyen(String quyenName, List dmQuyens) {
+	public Quyen(String quyenName, Set<User> users) {
 		this.quyenName = quyenName;
-		this.dmQuyens = dmQuyens;
+		this.users = users;
 	}
 
 	public Integer getQuyenId() {
@@ -56,12 +59,12 @@ public class Quyen implements java.io.Serializable {
 		this.quyenName = quyenName;
 	}
 
-	public List getDmQuyens() {
-		return this.dmQuyens;
+	public Set<User> getUsers() {
+		return this.users;
 	}
 
-	public void setDmQuyens(List dmQuyens) {
-		this.dmQuyens = dmQuyens;
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 
 }

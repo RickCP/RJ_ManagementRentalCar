@@ -1,16 +1,16 @@
 package com.rick.management.car.spring.persit.domain;
 
 import java.util.Date;
-import java.util.List;
-
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,10 +18,19 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "quanli_id")
-	private Integer quanliId;
+	@Column(name = "id")
+	private Integer id;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "quyen_id")
+	private Quyen quyen;
 
 	@Column(name = "user_name")
 	private String userName;
@@ -50,14 +59,11 @@ public class User implements java.io.Serializable {
 	@Column(name = "diachi")
 	private String diachi;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	private List<NhapXe> nhapXes;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	private Set<NhapXe> nhapXes = new HashSet<NhapXe>(0);
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	private List<DmQuyen> dmQuyens;
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	private List<DatXe> datXes;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	private Set<DatXe> datXes = new HashSet<DatXe>(0);
 
 	public User() {
 	}
@@ -68,12 +74,37 @@ public class User implements java.io.Serializable {
 		this.cmnd = cmnd;
 	}
 
-	public Integer getQuanliId() {
-		return this.quanliId;
+	public User(Quyen quyen, String userName, String password, String hoTen,
+			Date ngaySinh, Short gioiTinh, String dienThoai, long cmnd,
+			String email, String diachi, Set<NhapXe> nhapXes, Set<DatXe> datXes) {
+		this.quyen = quyen;
+		this.userName = userName;
+		this.password = password;
+		this.hoTen = hoTen;
+		this.ngaySinh = ngaySinh;
+		this.gioiTinh = gioiTinh;
+		this.dienThoai = dienThoai;
+		this.cmnd = cmnd;
+		this.email = email;
+		this.diachi = diachi;
+		this.nhapXes = nhapXes;
+		this.datXes = datXes;
 	}
 
-	public void setQuanliId(Integer quanliId) {
-		this.quanliId = quanliId;
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Quyen getQuyen() {
+		return this.quyen;
+	}
+
+	public void setQuyen(Quyen quyen) {
+		this.quyen = quyen;
 	}
 
 	public String getUserName() {
@@ -148,27 +179,19 @@ public class User implements java.io.Serializable {
 		this.diachi = diachi;
 	}
 
-	public List<NhapXe> getNhapXes() {
-		return nhapXes;
+	public Set<NhapXe> getNhapXes() {
+		return this.nhapXes;
 	}
 
-	public void setNhapXes(List<NhapXe> nhapXes) {
+	public void setNhapXes(Set<NhapXe> nhapXes) {
 		this.nhapXes = nhapXes;
 	}
 
-	public List<DmQuyen> getDmQuyens() {
-		return dmQuyens;
+	public Set<DatXe> getDatXes() {
+		return this.datXes;
 	}
 
-	public void setDmQuyens(List<DmQuyen> dmQuyens) {
-		this.dmQuyens = dmQuyens;
-	}
-
-	public List<DatXe> getDatXes() {
-		return datXes;
-	}
-
-	public void setDatXes(List<DatXe> datXes) {
+	public void setDatXes(Set<DatXe> datXes) {
 		this.datXes = datXes;
 	}
 

@@ -1,14 +1,12 @@
 package com.rick.management.car.spring.persit.domain;
 
-import java.util.List;
-
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,6 +14,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "hang_xe")
 public class HangXe implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -26,7 +29,7 @@ public class HangXe implements java.io.Serializable {
 	private String tenHangXe;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hangXe")
-	private List<LoaiXe> loaiXes;
+	private Set<LoaiXe> loaiXes = new HashSet<LoaiXe>(0);
 
 	public HangXe() {
 	}
@@ -35,7 +38,7 @@ public class HangXe implements java.io.Serializable {
 		this.tenHangXe = tenHangXe;
 	}
 
-	public HangXe(String tenHangXe, List<LoaiXe> loaiXes) {
+	public HangXe(String tenHangXe, Set<LoaiXe> loaiXes) {
 		this.tenHangXe = tenHangXe;
 		this.loaiXes = loaiXes;
 	}
@@ -56,11 +59,11 @@ public class HangXe implements java.io.Serializable {
 		this.tenHangXe = tenHangXe;
 	}
 
-	public List<LoaiXe> getLoaiXes() {
+	public Set<LoaiXe> getLoaiXes() {
 		return this.loaiXes;
 	}
 
-	public void setLoaiXes(List<LoaiXe> loaiXes) {
+	public void setLoaiXes(Set<LoaiXe> loaiXes) {
 		this.loaiXes = loaiXes;
 	}
 

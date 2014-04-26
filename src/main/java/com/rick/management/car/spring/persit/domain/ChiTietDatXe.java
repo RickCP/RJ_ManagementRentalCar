@@ -15,6 +15,11 @@ import javax.persistence.Table;
 @Table(name = "chi_tiet_dat_xe")
 public class ChiTietDatXe implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "chi_tiet_dat_xe_id")
@@ -25,7 +30,7 @@ public class ChiTietDatXe implements java.io.Serializable {
 	private DatXe datXe;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "dm_xe_id")
+	@JoinColumn(name = "dm_xe_id", nullable = false)
 	private DmXe dmXe;
 
 	@Column(name = "ngay_thue")
