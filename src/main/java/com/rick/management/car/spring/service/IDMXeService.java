@@ -12,5 +12,13 @@ import com.rick.management.car.spring.persit.domain.DmXe;
 public interface IDMXeService {
 
 	public List<DmXe> findAll();
+	
+	public DmXe findBydmXeId(Integer id);
+	
+	public List<DmXe> findByHangXe(String tenHangXe);
+	
+	public DmXe saveOrUpdate(DmXe xe);
+	
+	
 
 }

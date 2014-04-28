@@ -27,7 +27,7 @@ public class DmXe implements java.io.Serializable {
 	@Column(name = "dm_xe_id")
 	private Integer dmXeId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "loai_xe_id")
 	private LoaiXe loaiXe;
 
@@ -52,10 +52,10 @@ public class DmXe implements java.io.Serializable {
 	@Column(name = "hinh_anh_slider")
 	private String hinhAnhSlider;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dmXe")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "dmXe")
 	private Set<ChiTietDatXe> chiTietDatXes = new HashSet<ChiTietDatXe>(0);
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dmXe")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "dmXe")
 	private Set<ChiTietNhapXe> chiTietNhapXes = new HashSet<ChiTietNhapXe>(0);
 
 	public DmXe() {

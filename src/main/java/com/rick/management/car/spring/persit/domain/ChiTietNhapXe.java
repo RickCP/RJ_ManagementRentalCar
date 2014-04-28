@@ -24,11 +24,11 @@ public class ChiTietNhapXe implements java.io.Serializable {
 	@Column(name = "chi_tiet_nhap_xe_id")
 	private Integer chiTietNhapXeId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "nhap_xe_id")
 	private NhapXe nhapXe;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "dm_xe_id")
 	private DmXe dmXe;
 

@@ -27,7 +27,7 @@ public class LoaiXe implements java.io.Serializable {
 	@Column(name = "loai_xe_id")
 	private Integer loaiXeId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "hang_xe_id")
 	private HangXe hangXe;
 
@@ -37,7 +37,7 @@ public class LoaiXe implements java.io.Serializable {
 	@Column(name = "so_cho")
 	private Integer soCho;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "loaiXe")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "loaiXe")
 	private Set<DmXe> dmXes = new HashSet<DmXe>(0);
 
 	public LoaiXe() {

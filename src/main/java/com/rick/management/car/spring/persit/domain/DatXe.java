@@ -28,7 +28,7 @@ public class DatXe implements java.io.Serializable {
 	@Column(name = "dat_xe_id")
 	private Integer datXeId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 
@@ -41,7 +41,7 @@ public class DatXe implements java.io.Serializable {
 	@Column(name = "tong_so_tien")
 	private Double tongSoTien;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "datXe")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "datXe")
 	private Set<ChiTietDatXe> chiTietDatXes = new HashSet<ChiTietDatXe>(0);
 
 	public DatXe() {

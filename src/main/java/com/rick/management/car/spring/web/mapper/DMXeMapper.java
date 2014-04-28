@@ -6,6 +6,7 @@ import java.util.List;
 import com.rick.management.car.spring.persit.domain.DmXe;
 import com.rick.management.car.spring.persit.domain.LoaiXe;
 import com.rick.management.car.spring.web.bean.DMXeUI;
+import com.rick.management.car.spring.web.common.StringUtil;
 
 /**
  * 
@@ -13,11 +14,11 @@ import com.rick.management.car.spring.web.bean.DMXeUI;
  * 
  */
 public class DMXeMapper {
-	public DMXeUI convertToUI(DmXe xe) {
+	public static DMXeUI convertToUI(DmXe xe) {
 		DMXeUI ui = new DMXeUI();
 		if (xe != null) {
 			ui.setDmXeId(xe.getDmXeId());
-			ui.setGiaThueXe(xe.getGiaThueXe());
+			ui.setGiaThueXe(xe.getGiaThueXe().toString());
 			ui.setHinhAnh(xe.getHinhAnh());
 			ui.setHinhAnhSlider(xe.getHinhAnhSlider());
 			ui.setLoaiXe(xe.getLoaiXe().getTenLoaiXe());
@@ -29,11 +30,11 @@ public class DMXeMapper {
 		return ui;
 	}
 
-	public DmXe convertToEntity(DMXeUI ui, LoaiXe loaiXe) {
+	public static DmXe convertToEntity(DMXeUI ui, LoaiXe loaiXe) {
 		DmXe xe = new DmXe();
 		if (ui != null) {
 			xe.setDmXeId(ui.getDmXeId());
-			xe.setGiaThueXe(ui.getGiaThueXe());
+			xe.setGiaThueXe(StringUtil.geDoubleValue(ui.getGiaThueXe()));
 			xe.setHinhAnh(ui.getHinhAnh());
 			xe.setLoaiXe(loaiXe);
 			xe.setSoLuongThue(ui.getSoLuongThue());
@@ -46,7 +47,7 @@ public class DMXeMapper {
 		return xe;
 	}
 
-	public List<DMXeUI> convertToListUI(List<DmXe> xes) {
+	public static List<DMXeUI> convertToListUI(List<DmXe> xes) {
 		List<DMXeUI> uis = new ArrayList<DMXeUI>();
 		for (DmXe xe : xes) {
 			uis.add(convertToUI(xe));
@@ -54,7 +55,7 @@ public class DMXeMapper {
 		return uis;
 	}
 
-	public List<DmXe> convertToListEntity(List<DMXeUI> uis, LoaiXe loaiXe) {
+	public static List<DmXe> convertToListEntity(List<DMXeUI> uis, LoaiXe loaiXe) {
 		List<DmXe> xes = new ArrayList<DmXe>();
 		for (DMXeUI ui : uis) {
 			xes.add(convertToEntity(ui, loaiXe));

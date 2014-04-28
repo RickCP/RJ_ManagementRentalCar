@@ -17,7 +17,7 @@ public class DMXeUI {
 
 	private Integer soLuongThue;
 
-	private Double giaThueXe;
+	private String giaThueXe;
 
 	private String hinhAnh;
 
@@ -65,11 +65,12 @@ public class DMXeUI {
 		this.soLuongThue = soLuongThue;
 	}
 
-	public Double getGiaThueXe() {
+
+	public String getGiaThueXe() {
 		return giaThueXe;
 	}
 
-	public void setGiaThueXe(Double giaThueXe) {
+	public void setGiaThueXe(String giaThueXe) {
 		this.giaThueXe = giaThueXe;
 	}
 

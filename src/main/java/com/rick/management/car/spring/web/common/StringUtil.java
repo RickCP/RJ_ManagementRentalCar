@@ -19,6 +19,26 @@ public class StringUtil {
 		}
 		return 0;
 	}
+	public static Double geDoubleValue(Object obj) {
+		try {
+			if (obj != null) {
+				return Double.parseDouble(obj.toString().trim());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0.0;
+	}
+	public static int getIntValue(Object obj) {
+		try {
+			if (obj != null) {
+				return Integer.parseInt(obj.toString().trim());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
 	public static String convertToString(Object object) {
 		if(object==null) {
 			return null;

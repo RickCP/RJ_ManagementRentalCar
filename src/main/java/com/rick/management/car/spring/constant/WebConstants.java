@@ -24,6 +24,8 @@ public interface WebConstants {
 		
 		public static final String ADMINPAGE = "admin/admin_index";
 		public static final String INDEX_PAGE_LOGED = "index_loged";
+		public static final String DAT_THUE = "public/datthue";
+		public static final String ERROR_PAGE = "public/errors";
 		
 	
 	}

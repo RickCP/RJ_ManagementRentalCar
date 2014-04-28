@@ -5,7 +5,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Đăng kí tài khoản </title>
+<title>Đặt thuê xe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description"
 	content="LDT, a fully featured, responsive, HTML5, Bootstrap admin template." />
@@ -70,10 +70,10 @@ body {
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
-
+			
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>Đăng kí tài khoản</h2>
+					<h2>Đặt thuê xe du lịch</h2>
 				</div>
 				<!--/span-->
 			</div>
@@ -81,71 +81,43 @@ body {
 
 			<div class="row-fluid">
 				<div class="well span5 center ">
-					<form class="form-horizontal" action="#" th:action="@{/register}" method="post" th:object="${userUI}"  val:validate="${userUI}">
+					<form class="form-horizontal" action="#" th:action="@{/datthue}" method="post" th:object="${datXeUI}"  val:validate="${datXeUI}">
 						<fieldset>
-						<legend>Nhập các thông tin đăng kí</legend>
-							<p th:if="${errors}" th:text = "${errors}" style="color: red"></p>
-							<a href="#" th:href="@{/user/login}" class="btn btn-large btn-primary" style="margin-bottom: 10px">Đã có tài khoản</a> 
+						<legend>Nhập các thông tin đặt thuê xe</legend>
+							<p th:if="${notify}" style="color:red">Bạn đã đặt thuê xe thành công.</p>
+							<input id="id" name="id" type="hidden" th:field="${datXeUI.dmXeId}"/>
+							<input id="id" name="id" type="hidden" th:field="${datXeUI.soTien}"/>
+							<input id="id" name="id" type="hidden" th:field="${datXeUI.tinhTrang}"/>
 							<div class="control-group">
-								<div >
-									<input type="text" id="username" placeholder="Nhập tài khoản" th:field="*{username}" />
-								</div>
-								
-							</div>
-							<div class="control-group">
-								<div >
-									<input type="password" id="password" placeholder="Nhập mật khẩu" th:field="*{password}" />
-								</div>
-							</div>
-							<div class="control-group">
-								<div>
-									<input type="password" id="repassword" placeholder="Nhập lại mật khẩu" th:field="*{rePassword}" />
-
-								</div>
-							</div>
-							<div class="control-group">
-								<div >
-									<input type="email" id="email" placeholder="Nhập e-mail" th:field="*{email}" />
-								</div>
-							</div>
-							<div class="control-group">
-								<div >
-									<input type="text" id="hoten" placeholder="Nhập họ tên" th:field="*{hoTen}" />
-								</div>
+							  <div >
+								<input type="text" class="datepicker" id="date01" placeholder="Ngày thuê"  th:field="*{ngayThue}" />
+							  </div>
 							</div>
 							<div class="control-group">
 							  <div >
-								<input type="text" class="datepicker" id="date01" placeholder="Nhập ngày sinh" th:field="*{ngaySinh}" />
+								<input type="text" class="datepicker" id="date02" placeholder="Ngày Trả"  th:field="*{ngayTra}" />
 							  </div>
 							</div>
-							 <div class="control-group">
-								<div >
-								  <select id="gioitinh" th:field="*{gioiTinh}">
-									<option value="GT">--Giới tính--</option>
-									<option value="Nam">Nam</option>
-									<option value="Nữ">Nữ</option>	
+							 <div class="control-group" >
+								<label  for="soluong">Số lượng xe muốn thuê</label>
+								<div>
+								  <select id="soluong" th:field="*{soLuong}">
+									<option th:each = "sl : ${sls}" th:text= "${sl}" th:value="${sl}" >Option 1</option>
 								  </select>
 								</div>
 							  </div>
-		
+							
 							<div class="control-group">
-								<div >
-									<input type="tel" id="sodt" placeholder="Nhập số điện thoại" th:field="*{dienThoai}" />
-								</div>
+							  <label for="textarea2" >Liên hệ</label>
+							  <div >
+								<textarea  id="textarea2" rows="3" th:field="*{lienHe}" ></textarea>
+							  </div>
 							</div>
+							
+							
 							<div class="control-group">
 								<div >
-									<input type="number" id="cmnd" placeholder="Nhập số chứng minh nhân dân" th:field="*{cmnd}" />
-								</div>
-							</div>
-							<div class="control-group">
-								<div >
-									<input type="text" id="diachi" placeholder="Nhập địa chỉ" th:field="*{diaChi}" />
-								</div>
-							</div>
-							<div class="control-group">
-								<div >
-									<button type="submit" class="btn btn-primary">Đăng kí</button>
+									<button type="submit" class="btn btn-primary">Đặt thuê</button>
 									<button type="reset" class="btn btn-primary">Hủy bỏ</button>
 								</div>
 							</div>

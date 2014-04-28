@@ -7,26 +7,23 @@
 <head>
     <meta charset="UTF-8" />
     <title>Trang Chủ</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="LDT, a fully featured, responsive, HTML5, Bootstrap admin template." />
+	<meta name="author" content="Lê Đình Thoa" />
+    <!-- The fav icon -->
+	<link rel="shortcut icon" href="img/favicon.ico" th:href="@{/resources/img/favicon.ico}" />
 </head>
 
 <body>
-   
-	<div layout:fragment="content">
-		<div th:replace = "/public/menu :: ${menu == 'menu-loged' } ? 'menu-loged' : 'menu'">
-			Menu static
-   		</div>	
+    <p layout:fragment="menu" layout:include="public/menu::menu" th:with="hangXeUIs = ${hangXeUIs} ">
+            
+     </p>
+	<div layout:fragment="content" th:with="author='Joshua'">
+	
 		<div class="row">
 
-            <div class="col-md-3">
-                <p class="lead">Tra Cứu Loại Xe</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Hãng Xe</a>
-                    <a href="#" class="list-group-item">Số Chổ Ngồi</a>
-                    <a href="#" class="list-group-item">Dịch vụ</a>
-                </div>
-            </div>
 
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="row carousel-holder">
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -37,13 +34,13 @@
                             </ol>
                             <div class="carousel-inner" >
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" th:src="${xes.get(0).hinhAnhSlider}" alt="" />
+                                    <img class="slide-image" src="http://placehold.it/800x300" th:src="@{/}+${xes.get(0).hinhAnhSlider}" alt="" />
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" th:src="${xes.get(0).hinhAnhSlider}"  alt="" />
+                                    <img class="slide-image" src="http://placehold.it/800x300" th:src="@{/}+${xes.get(0).hinhAnhSlider}"  alt="" />
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" th:src="${xes.get(0).hinhAnhSlider}"  alt="" />
+                                    <img class="slide-image" src="http://placehold.it/800x300" th:src="@{/}+${xes.get(0).hinhAnhSlider}"  alt="" />
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -58,11 +55,12 @@
                 	</div>
                     <div class="col-sm-4 col-lg-4 col-md-4" th:each = "xe : ${xes}">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" th:src="${xe.hinhAnh}" alt="" />
+                            <img src="http://placehold.it/320x150" th:src="@{/}+ ${xe.hinhAnh} " alt="" />
                             <div class="caption">
-                                <h4 class="pull-right" th:text = "${xe.giaThueXe} + ' VND/Ngày' ">$24.99</h4>
+                                
                                 <h4 th:text = "${xe.tenXe}">
                                 </h4>
+                                <h4  th:text = "${xe.giaThueXe} + ' Triệu VND/Ngày' ">$24.99</h4>
                                 <h4><a href="#" th:href="@{/detail(id = ${xe.dmXeId} )}">Xem chi tiết</a></h4>
                    
                             </div>
@@ -85,6 +83,9 @@
 
         </div>
 	</div>
+	   <p layout:fragment="footer" layout:include="public/footer::footer"  class="hello-footer">
+            No footer
+       </p>
 </body>
 
 </html>

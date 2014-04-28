@@ -28,7 +28,7 @@ public class HangXe implements java.io.Serializable {
 	@Column(name = "ten_hang_xe")
 	private String tenHangXe;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hangXe")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "hangXe")
 	private Set<LoaiXe> loaiXes = new HashSet<LoaiXe>(0);
 
 	public HangXe() {
