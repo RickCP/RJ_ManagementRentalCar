@@ -21,7 +21,7 @@ public class UserMapper {
 	public static UserUI convertToUI(User user) {
 		UserUI ui = new UserUI();
 		if (user != null) {
-			ui.setCmnd(StringUtil.convertToString(user.getCmnd()));
+			ui.setCmnd(String.valueOf(user.getCmnd()));
 			ui.setDiaChi(user.getDiachi());
 			ui.setDienThoai(user.getDienThoai());
 			ui.setEmail(user.getEmail());
@@ -31,7 +31,7 @@ public class UserMapper {
 			ui.setGioiTinh("Nữ");
 			ui.setHoTen(user.getHoTen());
 			ui.setId(user.getId());
-			ui.setNgaySinh(StringUtil.convertToString(user.getNgaySinh()));
+			ui.setNgaySinh(StringUtil.convertDateTimeToString(user.getNgaySinh()));
 			ui.setPassword(user.getPassword());
 			ui.setUsername(user.getUserName());
 
@@ -65,7 +65,7 @@ public class UserMapper {
 		return user;
 	}
 	
-	public List<UserUI> convertToListUI(List<User> users)
+	public static List<UserUI> convertToListUI(List<User> users)
 	{
 		List<UserUI> uis =new ArrayList<UserUI>();
 		for (User user : users) {
@@ -73,7 +73,7 @@ public class UserMapper {
 		}
 		return uis;
 	}
-	public List<User> convertToListEntity(List<UserUI> uis)
+	public static List<User> convertToListEntity(List<UserUI> uis)
 	{
 		List<User> users =new ArrayList<User>();
 		for(UserUI ui : uis)

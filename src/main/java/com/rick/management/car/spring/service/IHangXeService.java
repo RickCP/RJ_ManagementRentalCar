@@ -13,5 +13,6 @@ import com.rick.management.car.spring.persit.domain.HangXe;
 public interface IHangXeService {
 	public List<HangXe> findAll();
 	public HangXe findByhangXeId(Integer hangXeId);
-
+	public HangXe create(HangXe hangXe);
+	public HangXe findBytenHangXe(String tenHangXe );
 }

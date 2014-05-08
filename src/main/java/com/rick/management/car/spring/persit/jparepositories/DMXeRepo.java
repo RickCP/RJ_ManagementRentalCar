@@ -21,6 +21,6 @@ public interface DMXeRepo extends JpaBaseRepo<DmXe, Integer> {
 	@Query(FIND_BY_HANG_XE)
 	public List<DmXe> FindByHangXe(@Param("tenHangXe") String tenHangXe);
 	
-
+	public DmXe  findBytenXe(String tenXe);
 
 }

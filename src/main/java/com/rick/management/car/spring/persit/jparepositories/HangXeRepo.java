@@ -10,5 +10,6 @@ import com.rick.management.car.spring.persit.domain.HangXe;
  */
 public interface HangXeRepo  extends JpaBaseRepo<HangXe,Integer>{
 	public HangXe findByhangXeId(Integer hangXeId);
+	public HangXe findBytenHangXe(String tenHangXe);
 
 }

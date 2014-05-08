@@ -30,4 +30,6 @@ public interface IUserService {
 	
 	public User findUserByUsernameAndPassword(String userName,String password);
 	
+	public User findByUserName(String userName);
+	
 }

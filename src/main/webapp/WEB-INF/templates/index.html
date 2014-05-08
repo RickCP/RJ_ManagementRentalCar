@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <p layout:fragment="menu" layout:include="public/menu::menu" th:with="hangXeUIs = ${hangXeUIs} ">
+    <p layout:fragment="menu" layout:include="public/menu:: ${menu == 'menu-loged'} ? 'menu-loged' : 'menu' " th:with="hangXeUIs = ${hangXeUIs} ">
             
      </p>
 	<div layout:fragment="content" th:with="author='Joshua'">

@@ -35,4 +35,10 @@ public class UserService extends BaseService implements IUserService {
 		return userRepoJpa.findUserByUserNameAndPassword(userName, password);
 	}
 
+	@Override
+	public User findByUserName(String userName) {
+		
+		return userRepoJpa.findByuserName(userName);
+	}
+
 }

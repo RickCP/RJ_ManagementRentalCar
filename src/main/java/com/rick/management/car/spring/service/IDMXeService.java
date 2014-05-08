@@ -19,6 +19,6 @@ public interface IDMXeService {
 	
 	public DmXe saveOrUpdate(DmXe xe);
 	
-	
+	public DmXe findBytenXe(String tenXe);
 
 }

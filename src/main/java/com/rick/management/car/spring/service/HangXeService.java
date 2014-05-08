@@ -27,5 +27,15 @@ public class HangXeService  implements IHangXeService{
 
 		return hangXeRepo.findByhangXeId(hangXeId);
 	}
+	@Override
+	public HangXe create(HangXe hangXe) {
+		
+		return hangXeRepo.save(hangXe);
+	}
+	@Override
+	public HangXe findBytenHangXe(String tenHangXe) {
+		
+		return hangXeRepo.findBytenHangXe(tenHangXe);
+	}
 
 }

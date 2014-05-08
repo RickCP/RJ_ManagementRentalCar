@@ -40,4 +40,12 @@ public class DMXeService implements IDMXeService {
 		return dMXeRepo.save(xe);
 	}
 
+	@Override
+	public DmXe findBytenXe(String tenXe) {
+		
+		return dMXeRepo.findBytenXe(tenXe);
+	}
+	
+	
+
 }

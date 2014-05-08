@@ -2809,3 +2809,6 @@
 /target
 /target
 /target
+/.classpath
+/.project
+/.gitignore

@@ -26,7 +26,12 @@ public interface WebConstants {
 		public static final String INDEX_PAGE_LOGED = "index_loged";
 		public static final String DAT_THUE = "public/datthue";
 		public static final String ERROR_PAGE = "public/errors";
+		public static final String DM_THANH_VIEN = "admin/thanhvien";
 		
+		public static final String VIEW_USER = "admin/view";
+		public static final String VIEW_XE = "admin/xe/nhapxe";
+		public static final String VIEW_LOAI_XE = "admin/xe/loaixe";
+		public static final String VIEW_HANG_XE = "admin/xe/hangxe";
 	
 	}
 

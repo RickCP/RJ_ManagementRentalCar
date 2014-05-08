@@ -1,5 +1,9 @@
 package com.rick.management.car.spring.web.common;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 
@@ -54,6 +58,12 @@ public class StringUtil {
 			}
 		}
 		return data;
+	}
+	public static String convertDateTimeToString(Date date)
+	{
+		Format formatter = new SimpleDateFormat("dd/MM/yy");
+		String string = formatter.format(date);
+		return string;
 	}
 
 }
