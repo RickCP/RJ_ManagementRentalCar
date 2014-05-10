@@ -1,5 +1,5 @@
 <%@page import="org.springframework.web.servlet.ModelAndView"%>
-<%@page import="com.rick.management.car.spring.web.controller.HomeController"%>
+<%@page import="com.quanlythuexeoto.web.controller.HomeController"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ include file="/WEB-INF/jsp/include/taglibs_include.jsp" %>

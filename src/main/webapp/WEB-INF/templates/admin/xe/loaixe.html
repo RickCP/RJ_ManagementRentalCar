@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/layout">
+<head>
+<title>Quản Lý Loại Xe</title>
+</head>
+<body>
+	<p layout:fragment = "content">
+		<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">Home</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">Loại Xe</a>
+					</li>
+				</ul>
+		</div>
+		<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title="">
+						<h2><i class="icon-edit"></i>Nhập Loại Xe</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+					<form class="form-horizontal" style="text-align: center;" th:object = "${ui}" method="post" val:validate = "${ui}">
+						   <p th:if = "${msg}" th:text = "${msg}"></p>
+						   <div class="control-group">
+								<label class="control-label" for="selectError3">Loại xe từ hãng Xe</label>
+								<div class="controls">
+								  <select id="selectError3" th:field = "*{tenhangXe}">
+									<option th:each = "hangXe : ${hangXeUIs}" th:value = "${hangXe.tenHangXe}" th:text = "${hangXe.tenHangXe}">Honda</option>
+								
+								  </select>
+								  <br/>
+								 <span ><a href="#" th:href="@{/user/themhang}" >Thêm Hãng Xe</a></span>
+								</div>
+						  </div>
+					
+						  
+						 <div class="control-group warning">
+								<label class="control-label" for="inputSuccess">Tên Loại Xe</label>
+								<div class="controls">
+								  <input type="text" id="inputSuccess" th:field = "*{tenLoaiXe}" />
+								
+								</div>
+						 </div>
+						  <div class="control-group warning">
+								<label class="control-label" for="inputSuccess">Số chổ ngồi</label>
+								<div class="controls">
+								  <input type="text" id="inputSuccess" th:field = "*{soCho}" />
+								
+								</div>
+						 </div>
+						 
+						 <div class="form-actions">
+								<button type="submit" class="btn btn-primary">Thêm loại xe</button>
+								<button class="btn">Cancel</button>
+						</div>
+					</form>
+					
+					</div>
+				</div>
+		</div>
+					
+	</p>
+</body>
+</html>
